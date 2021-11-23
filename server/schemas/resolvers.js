@@ -3,7 +3,7 @@ const {
     getSingleUser,
     getCurrentUser,
     saveBook,
-    deleteBook,
+    removeBook,
     login
 } = require('../controllers/user-controller');
 
@@ -26,7 +26,7 @@ const resolvers = {
         saveBook: async (parent, args, { user }) => {
             return saveBook(args.book, user);
         },
-        deleteBook: async (parent, args, { user }) => {
+        removeBook: async (parent, args, { user }) => {
             return deleteBook(args, user);
         }
     }
