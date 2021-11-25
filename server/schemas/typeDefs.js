@@ -30,7 +30,7 @@ const typeDefs = gql`
         description: String!
         image: String!
     }
-
+    
     type Query {
         me: User
         user(username: String, _id: ID): User
