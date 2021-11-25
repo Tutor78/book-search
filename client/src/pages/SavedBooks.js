@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, CardColumns, Card, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router-dom';
-import { useQuery, userMutation } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 
 import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
@@ -20,7 +20,7 @@ const SavedBooks = () => {
 
   const [removeBook] = useMutation(REMOVE_BOOK);
 
-  const handleRemoveBook = async (bookId) => {
+  const handleDeleteBook = async (bookId) => {
     try {
       await removeBook({
         variables: { bookId }
